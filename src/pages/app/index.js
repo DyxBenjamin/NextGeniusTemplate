@@ -1,7 +1,16 @@
 import Head from 'next/head'
-import {Box, Typography} from '@mui/material';
+import {useState} from "react";
+import {Box, Tab, Tabs} from '@mui/material';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+
 
 export default function App() {
+	const [value, setValue] = useState(0);
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+
 	return (
 		<>
 			<Head>
@@ -20,10 +29,41 @@ export default function App() {
 					>
 					Salud digna logo
 				</Box>
+				{
+					value === 0 &&
+					<Box>
+						Alpha
+					</Box>
+				}
+				{
+					value === 1 &&
+					<Box>
+						Beta
+					</Box>
+				}
+				{
+					value === 2 &&
+					<Box>
+						Gamma
+					</Box>
+				}
+				<Box
+					sx={{
+						position:'absolute',
+						bottom:0,
+						width:'100%'
+					}}>
 
-				<Typography variant={'h2'}>
-					App Side
-				</Typography>
+					<Tabs
+						variant="fullWidth"
+						value={value}
+						onChange={handleChange}
+						aria-label="icon label tabs example">
+						<Tab icon={<PhoneAndroidIcon />} label="Alpha" />
+						<Tab icon={<PhoneAndroidIcon />} label="Beta" />
+						<Tab icon={<PhoneAndroidIcon />} label="Gamma" />
+					</Tabs>
+				</Box>
 			</main>
 		</>
 	)
