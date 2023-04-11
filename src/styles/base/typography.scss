@@ -1,0 +1,47 @@
+@import "variables";
+
+.typo-base {
+	letter-spacing: 1px;
+	font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+.typo-title {
+	@extend .typo-base;
+	color: $brand-dark;
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+
+.typo-subtitle {
+	@extend .typo-base;
+	color: $brand-dark !important;
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+
+.typo-text {
+	@extend .typo-base;
+	color: $text-color !important;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.typo-text-white {
+	@extend .typo-base;
+	color: #FFFFFF !important;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.typo-text--bold {
+	@extend .typo-text;
+	font-weight: 700;
+}
+
+.typo-link {
+	@extend .typo-base;
+	color: $link-color !important;
+	//font-size: 1rem;
+	font-weight: 600;
+	text-decoration: underline;
+}

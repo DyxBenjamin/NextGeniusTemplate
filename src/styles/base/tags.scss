@@ -1,0 +1,40 @@
+.section-ovr{
+	max-width: 1440px;
+	width: 100%;
+	margin: 20px auto;
+	}
+
+.nav-ovr{
+	max-width: 1440px;
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 32px;
+	}
+
+.d-flex-col{
+	display: flex;
+    flex-direction: column;
+}
+
+.d-flex-row{
+	display: flex;
+    flex-direction: row;
+}
+
+.d-flex-center{
+    justify-content: center;
+    align-items: center;	
+}
+
+.h-w-100{
+	height: 100%;
+    width: 100%;
+}
+
+.top-left-0{
+	top: 0;
+	left: 0;
+}

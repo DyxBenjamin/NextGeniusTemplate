@@ -1,0 +1,36 @@
+@mixin flex-vertical( $justify: center, $align: center, $gap: 0 ) {
+  	display: flex;
+	flex-direction: column;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin flex-horizontal( $justify: center, $align: center, $gap: 0 ) {
+  	display: flex;
+	flex-direction: row;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+.center {
+	@include flex-vertical( center, center );
+}
+
+.left {
+	@include flex-vertical( flex-start, center );
+}
+
+.right {
+	@include flex-vertical( flex-end, center );
+}
+
+.top {
+	@include flex-horizontal( center, flex-start );
+}
+
+.bottom {
+	@include flex-horizontal( center, flex-end );
+}
+
+

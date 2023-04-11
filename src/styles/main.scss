@@ -1,0 +1,9 @@
+@import "base/index";
+@import "components/index";
+@import "pages/index";
+@import "utils/index";
+
+main, body, html {
+  padding: 0;
+  margin: 0;
+}

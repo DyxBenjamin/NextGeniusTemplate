@@ -1,0 +1,7 @@
+@import "../base/index";
+
+.ph-img{
+    @include flex-vertical( center, center );
+    background: #333333;
+    color: #ffffff;
+}
