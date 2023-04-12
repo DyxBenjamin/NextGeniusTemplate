@@ -1,9 +1,9 @@
 import {Fragment} from "react";
 
-export default function Index() {
-    return(
+export default function NewsIndex() {
+    return (
         <Fragment>
-            AboutHome
+            Recipes
         </Fragment>
     )
 }
