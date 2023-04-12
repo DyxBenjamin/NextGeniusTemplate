@@ -6,6 +6,7 @@ import {useState} from 'react';
 import Router from 'next/router'
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
+import {EmojiFoodBeverage, FoodBank, MenuBook, MenuOpen, Newspaper} from "@mui/icons-material";
 
 const Footer = () => {
     const [value, setValue] = useState(0);
@@ -20,10 +21,12 @@ const Footer = () => {
                 }}>
                 <BottomNavigationAction label="Home" icon={<HomeIcon/>}
                                         onClick={() => Router.push(`/app`)}/>
-                <BottomNavigationAction label="Discover" icon={<AutoFixHighIcon/>}
-                                        onClick={() => Router.push(`/app/about`)}/>
-                <BottomNavigationAction label="Account" icon={<AccountCircle/>}
-                                        onClick={() => Router.push(`/app/news`)}/>
+                <BottomNavigationAction label="Recipes" icon={<MenuBook/>}
+                                        onClick={() => Router.push(`/app/recipes`)}/>
+                <BottomNavigationAction label="Profile" icon={<AccountCircle/>}
+                                        onClick={() => Router.push(`/app/profile`)}/>
+                <BottomNavigationAction label="Articles" icon={<Newspaper/>}
+                                        onClick={() => Router.push(`/app/articles`)}/>
             </BottomNavigation>
         </Paper>
     )
