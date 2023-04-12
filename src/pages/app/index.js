@@ -1,8 +1,9 @@
 import {Fragment} from "react";
 import SwipeableCarousel from "@components/SwipeableCarousel";
-import {Box, Button} from "@mui/material";
+import {Box, Button, Typography} from "@mui/material";
 import ButtonWithIcon from "@components/ButtonWithIcon";
 import Container from "@mui/material/Container";
+import ButtonProfile from "@components/ButtonProfile";
 
 const cards = [
     {
@@ -32,7 +33,20 @@ export default function App() {
             <Container
                 maxWidth="xl"
                 sx={{mt: 2, display: "flex", flexDirection: "column"}}>
-                <ButtonWithIcon />
+                <ButtonWithIcon/>
+                <Box sx={{m: 1, display: 'flex', textAlign: 'center'}}>
+                    <Typography sx={{flex: 1}} variant="subtitle1">
+                        Miembros de la familia
+                    </Typography>
+                </Box>
+                <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
+                    <Typography sx={{flex: 1}} variant="subtitle2">
+                        Un perfil completo mejorara las recomendaciones nutrimentales
+                    </Typography>
+                </Box>
+                <Box sx={{mb: 1}}>
+                    <ButtonProfile/>
+                </Box>
                 <SwipeableCarousel cards={cards}/>
             </Container>
         </Box>

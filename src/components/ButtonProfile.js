@@ -1,15 +1,13 @@
 import {Button} from '@mui/material';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import AddIcon from '@mui/icons-material/Add';
 
-const ButtonWithIcon = () => {
+const ButtonAddProfile = () => {
     return (
         <Button
             sx={{
                 display: 'block',
                 mx: 'auto',
                 mb: 2,
-                width: '80vw',
-                height: 120,
                 borderRadius: 5,
                 bgcolor: 'gray',
                 color: 'white',
@@ -17,15 +15,12 @@ const ButtonWithIcon = () => {
                     bgcolor: 'darkGray',
                 },
             }}
-            startIcon={<LocalDiningIcon
-                sx={{
-                    width: '75px',
-                    height: '75px',
-                }}
-            />}>
-            Crear mi menú del día
+            startIcon={<AddIcon sx={{
+                width: '30px',
+                height: '30px',
+            }}/>}>
         </Button>
     );
 };
 
-export default ButtonWithIcon;
+export default ButtonAddProfile;
