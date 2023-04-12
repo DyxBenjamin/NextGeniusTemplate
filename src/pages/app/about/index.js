@@ -1,11 +1,9 @@
 import {Fragment} from "react";
 
-
-export default function App() {
-
-    return (
+export default function Index() {
+    return(
         <Fragment>
-            Index
+            AboutHome
         </Fragment>
     )
 }
