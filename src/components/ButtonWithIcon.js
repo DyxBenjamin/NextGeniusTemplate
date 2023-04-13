@@ -1,5 +1,6 @@
 import {Button} from '@mui/material';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import Router from "next/router";
 
 const ButtonWithIcon = () => {
     return (
@@ -17,6 +18,7 @@ const ButtonWithIcon = () => {
                     bgcolor: '#444343',
                 },
             }}
+            onClick={() => Router.push(`/app/recipes`)}
             startIcon={<LocalDiningIcon
                 sx={{
                     width: '75px',
