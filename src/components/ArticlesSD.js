@@ -9,6 +9,21 @@ import _ from "lodash";
 import {Fragment, useState} from "react";
 import {Box, Modal} from "@mui/material";
 
+const styles = {
+    modal: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        height: "70%",
+        width: "70%",
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+        overflow: "scroll"
+    }
+}
 export default function ArticlesSD({articles}) {
     const [modals, setModals] = useState([]);
 
@@ -49,17 +64,9 @@ export default function ArticlesSD({articles}) {
                         aria-describedby="modal-description"
                     >
                         <Box
-                            sx={{
-                                position: "absolute",
-                                top: "50%",
-                                left: "50%",
-                                transform: "translate(-50%, -50%)",
-                                bgcolor: "white",
-                                boxShadow: 24,
-                                p: 4,
-                                overflowY: "scroll",
-                                maxHeight: "90vh",
-                            }}>
+                            sx={
+                                styles.modal
+                            }>
                             <Typography id="modal-title" variant="h4" component="h2" mb={2} textAlign="center">
                                 {valueArt.title}
                             </Typography>
