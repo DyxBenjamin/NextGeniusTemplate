@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import ButtonProfile from "@components/ButtonProfile";
 import useGetAPI from "@hooks/useGetAPI";
 import CircularProgressComponent from "@components/circularProgressComponent";
-import ButtonsFamiliars from "@components/organisms/ButtonsFamiliars";
+import ButtonsFamiliars from "@components/ButtonsFamiliars";
 import ArticlesSD from "@components/ArticlesSD";
 
 export default function App() {

@@ -1,0 +1,41 @@
+import * as r_ from "radash";
+
+export default async function handler(req, res) {
+    const platillos = [
+        { label: 'Chiles en nogada', calories: 800, image: 'chiles-en-nogada.jpg' },
+        { label: 'Mole poblano', calories: 600, image: 'mole-poblano.jpg' },
+        { label: 'Tacos al pastor', calories: 300, image: 'tacos-al-pastor.jpg' },
+        { label: 'Pozole', calories: 500, image: 'pozole.jpg' },
+        { label: 'Enchiladas', calories: 400, image: 'enchiladas.jpg' },
+        { label: 'Tamales', calories: 250, image: 'tamales.jpg' },
+        { label: 'Cochinita pibil', calories: 700, image: 'cochinita-pibil.jpg' },
+        { label: 'Sopa de tortilla', calories: 300, image: 'sopa-de-tortilla.jpg' },
+        { label: 'Chilaquiles', calories: 450, image: 'chilaquiles.jpg' },
+        { label: 'Quesadillas', calories: 350, image: 'quesadillas.jpg' },
+        { label: 'Flautas', calories: 400, image: 'flautas.jpg' },
+        { label: 'Gorditas', calories: 500, image: 'gorditas.jpg' },
+        { label: 'Sopes', calories: 350, image: 'sopes.jpg' },
+        { label: 'Tostadas', calories: 300, image: 'tostadas.jpg' },
+        { label: 'Guacamole', calories: 150, image: 'guacamole.jpg' },
+        { label: 'Pico de gallo', calories: 50, image: 'pico-de-gallo.jpg' },
+        { label: 'Fajitas', calories: 600, image: 'fajitas.jpg' },
+        { label: 'Burritos', calories: 800, image: 'burritos.jpg' },
+        { label: 'Arroz con frijoles', calories: 400, image: 'arroz-con-frijoles.jpg' },
+        { label: 'Sopa de fideo', calories: 300, image: 'sopa-de-fideo.jpg' },
+        { label: 'Tacos de pollo', calories: 250, image: 'tacos-de-pollo.jpg' },
+        { label: 'Pollo en salsa verde', calories: 350, image: 'pollo-en-salsa-verde.jpg' },
+        { label: 'Milanesa de res', calories: 500, image: 'milanesa-de-res.jpg' },
+        { label: 'Chiles rellenos', calories: 600, image: 'chiles-rellenos.jpg' },
+        { label: 'Huevos con chorizo', calories: 350, image: 'huevos-con-chorizo.jpg' },
+        { label: 'Frijoles refritos', calories: 200, image: 'frijoles-refritos.jpg' },
+        { label: 'Carne asada', calories: 700, image: 'carne-asada.jpg' },
+        { label: 'Pescado frito', calories: 400, image: 'pescado-frito.jpg' },
+        { label: 'Tostadas de tinga de pollo', calories: 350, image: 'tostadas-de-tinga-de-pollo.jpg' },
+        { label: 'Torta de jamón', calories: 400, image: 'torta-de-jamon.jpg' },
+        { label: 'Enchiladas de pollo', calories: 400, image: 'enchiladas-de-pollo.jpg' },
+        { label: 'Caldo de res', calories: 250, image: 'caldo-de-res.jpg' },
+        { label: 'Guisado de pollo', calories: 400, image: 'guisado-de-pollo.jpg' },
+        { label: 'Picadillo', calories: 300, image: 'picadillo.jpg' },
+    ];
+    return r_.isEmpty(platillos) ? res.status(400).send("ERROR") : res.status(200).json(platillos)
+}
