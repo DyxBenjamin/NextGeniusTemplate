@@ -1,10 +1,18 @@
 import React from 'react';
 import Nav from "@pages/dashboard/components/Nav";
+import {Box, Typography} from "@mui/material";
 
 export default function Publicaciones() {
 	return (
 		<Nav>
-			<h1>Publicaciones</h1>
+			<Box sx={{ padding:'2rem' }} >
+				<Typography variant={'h5'} >
+					Publicaciones
+				</Typography>
+				<Typography>
+					Crea y administra tus publicaciones para tus pacientes
+				</Typography>
+			</Box>
 		</Nav>
 	);
 }

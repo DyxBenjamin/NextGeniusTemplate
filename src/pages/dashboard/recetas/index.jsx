@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import Nav from "@pages/dashboard/components/Nav";
 import CreateRecipeModal from "@pages/dashboard/components/CreateRecipeModal";
-import {Box, Button, Typography} from "@mui/material";
+import {Box, Button, MenuItem, Select, TextField, Typography} from "@mui/material";
+import RecipeCard from "@pages/dashboard/components/RecipeCard";
 
 export default function Recetas() {
 	const [openCreateRecipeModal, setOpenCreateRecipeModal] = useState(false);
@@ -12,18 +13,45 @@ export default function Recetas() {
 
 	return (
 		<Nav>
-			<Box sx={{ padding:'2rem' }} >
+			<Box sx={{ padding:'2rem', width:'100%' }} >
 				<Typography variant={'h5'} >
-					Pacientes
+					Recetas
 				</Typography>
 				<Typography>
-					En esta sección podrás ver todos los pacientes que tienes asignados a tu cuenta.
+					Crea y administra las recetas de tus planes de alimentación.
 				</Typography>
+				<Box sx={{ margin:'2rem 0', width:'100%', display:'flex', flexDirection:'row', gap:'1rem' }} >
+					<TextField
+						sx={{ width:'250px' }}
+						id="outlined-basic" label="Buscar Receta" variant="outlined" />
+					<Select
+						sx={{ width:'200px' }}
+						value={'All'}
+						onChange={()=>{}}>
+						<MenuItem value={'All'}>Todos</MenuItem>
+						<MenuItem value={'breakfast'}>Desayuno</MenuItem>
+						<MenuItem value={'meal'}>Comida</MenuItem>
+						<MenuItem value={'dinner'}>Cena</MenuItem>
+						<MenuItem value={'other'}>Colacion</MenuItem>
+					</Select>
+				</Box>
+				<Box sx={{
+					display: 'grid',
+					gridTemplateColumns: 'repeat(3, 1fr)',
+					gridGap: '1rem',
+					marginTop: '2rem'
+				}} >
+					<Button onClick={switchCreateRecipeModal} color={'primary'} sx={{ background:'#FAFAFA', padding:'1rem', borderRadius:'10px' }}>
+						Agregar receta
+					</Button>
+					<RecipeCard />
+					<RecipeCard />
+					<RecipeCard />
+				</Box>
+
 			</Box>
 
-			<Button onClick={switchCreateRecipeModal} color={'primary'} >
-				Crear receta
-			</Button>
+
 			<CreateRecipeModal open={openCreateRecipeModal} handleClose={switchCreateRecipeModal} data={'test'} />
 		</Nav>
 	);
