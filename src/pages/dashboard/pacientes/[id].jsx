@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useRouter} from "next/router";
-import {Avatar, Box, Button, Tab, Tabs, Typography} from "@mui/material";
+import {Avatar, Box, Tab, Tabs, Typography} from "@mui/material";
 import _ from "lodash";
 import PlaceholderUsers from "@data/PlaceholderUsers";
 import Nav from "@pages/dashboard/components/Nav";
@@ -8,7 +8,6 @@ import ProfileTab from "@pages/dashboard/pacientes/components/ProfileTab";
 import PlansTab from "@pages/dashboard/pacientes/components/PlansTab";
 import DocumentsTab from "@pages/dashboard/pacientes/components/DocumentsTab";
 import PublicationsTab from "@pages/dashboard/pacientes/components/PublicationsTab";
-import {Feedback} from "@mui/icons-material";
 import FeedbackTab from "@pages/dashboard/pacientes/components/FeedbackTab";
 
 
@@ -42,7 +41,7 @@ export default function id() {
 						{`${profile?.name} ${profile?.lastName}`}
 					</Typography>
 				</Box>
-				<Box sx={{marginTop:'30px' }}  >
+				<Box sx={{margin:'30px 0' }}  >
 					<Tabs value={tabSelected}  onChange={handleChangeTab} >
 						<Tab label="Planes" value={TabsEnum.Plans} />
 						<Tab label="Perfil" value={TabsEnum.Profile} />
