@@ -25,27 +25,27 @@ const Footer = () => {
                         "&.Mui-selected": {
                             color: "white"
                         }
-                    }} label="Home" icon={<HomeIcon/>}
+                    }} label="Inicio" icon={<HomeIcon/>}
                     onClick={() => Router.push(`/app`)}/>
                 <BottomNavigationAction
                     sx={{
                         "&.Mui-selected": {
                             color: "white"
                         }
-                    }} label="Recipes" icon={<MenuBook/>}
+                    }} label="Recetas" icon={<MenuBook/>}
                     onClick={() => Router.push(`/app/recetas`)}/>
                 <BottomNavigationAction sx={{
                     "&.Mui-selected": {
                         color: "white"
                     }
-                }} label="Profile" icon={<AccountCircle/>}
+                }} label="Perfil" icon={<AccountCircle/>}
                                         onClick={() => Router.push(`/app/perfil`)}/>
                 <BottomNavigationAction
                     sx={{
                         "&.Mui-selected": {
                             color: "white"
                         }
-                    }} label="Articles" icon={<Newspaper/>}
+                    }} label="Artículos" icon={<Newspaper/>}
                     onClick={() => Router.push(`/app/articulos`)}/>
             </BottomNavigation>
         </Paper>
