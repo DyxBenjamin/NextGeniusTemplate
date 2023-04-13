@@ -5,17 +5,16 @@ import ErrorIcon from "@mui/icons-material/Error";
 import React, {Fragment} from "react";
 
 const messages = [
-    {text: "Hechale poco queso", icon: <CheckCircleIcon sx={{color: "green"}}/>},
-    {text: "Acompañalo con agua", icon: <CheckCircleIcon sx={{color: "green"}}/>},
+    {text: "Intenta cambiar tu aceite por girasol u oliva", icon: <CheckCircleIcon sx={{color: "green"}}/>},
+    {text: "No olvides consumir 2.5 litros de agua", icon: <CheckCircleIcon sx={{color: "green"}}/>},
     {
-        text: "Los carbohidratos se ven bien",
+        text: "Los valores nutrimentales son adecuados",
         icon: <CheckCircleIcon sx={{color: "green"}}/>,
     },
-    {text: "Las calorias son muy altas", icon: <ErrorIcon sx={{color: "red"}}/>},
-    {text: "Bajo nivel de nutrientes", icon: <ErrorIcon sx={{color: "red"}}/>},
-    {text: "Puedes agregar frijoles", icon: <WarningIcon sx={{color: "orange"}}/>},
-    {text: "Tortilla puede funcionar", icon: <WarningIcon sx={{color: "orange"}}/>},
-    {text: "No olvides agua natural", icon: <WarningIcon sx={{color: "orange"}}/>},
+    {text: "Tu consumo de calorias es alto", icon: <ErrorIcon sx={{color: "red"}}/>},
+    {text: "El aporte nutricional fue bajo", icon: <ErrorIcon sx={{color: "red"}}/>},
+    {text: "Puedes agregar frijoles para compensar la proteina", icon: <WarningIcon sx={{color: "orange"}}/>},
+    {text: "Reduce tu consumo de tortilla en 1pz", icon: <WarningIcon sx={{color: "orange"}}/>},
 ];
 
 const getRandomMessages = () => {

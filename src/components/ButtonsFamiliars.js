@@ -1,5 +1,5 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import {Button, Stack, Typography} from "@mui/material";
+import {Avatar, Button, Stack, Typography} from "@mui/material";
 import _ from "lodash";
 import React, {Fragment} from 'react';
 
@@ -27,7 +27,7 @@ const ButtonsFamiliars = ({users}) => {
                     }}>
                     {/*<Typography variant="button">Agregar</Typography>*/}
                     <Stack direction="column" spacing={1} alignItems="center">
-                        <AccountCircleIcon sx={{width: '30px', height: '30px'}}/>
+                        <Avatar sx={{width: '30px', height: '30px'}} src={valueUser.avatar} />
                         <Typography variant="body2">{valueUser.name}</Typography>
                     </Stack>
                 </Button>

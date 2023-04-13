@@ -2,8 +2,6 @@ import React, {useState} from "react"
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import {Avatar, Button} from "@mui/material";
-import ButtonProfile from "@components/ButtonProfile";
-import CreateRecipeModal from "@pages/dashboard/components/CreateRecipeModal";
 import EdicionDatos from "@components/EdicionDatos";
 
 export default function ProfileCard() {

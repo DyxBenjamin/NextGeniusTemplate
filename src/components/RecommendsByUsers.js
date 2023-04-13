@@ -44,7 +44,7 @@ const RecommendsByIUsers = ({users}) => {
                     sx={{
                         m: 2,
                         borderRadius: 2,
-                        bgcolor: '#868589',
+                        bgcolor: '#f8f8f8',
                     }}>
                     <Container
                         maxWidth="xl"
@@ -102,13 +102,13 @@ const RecommendsByIUsers = ({users}) => {
                                     </div>
                                     <div style={{display: "flex"}}>
                                         <div style={{width: "33%"}}><Box sx={{width: '100%'}}>
-                                            <LinearProgressWithLabel value={progress}/>
+                                            <LinearProgressWithLabel value={45}/>
                                         </Box></div>
                                         <div style={{width: "33%"}}><Box sx={{width: '100%'}}>
-                                            <LinearProgressWithLabel value={progress}/>
+                                            <LinearProgressWithLabel value={80}/>
                                         </Box></div>
                                         <div style={{width: "33%"}}><Box sx={{width: '100%'}}>
-                                            <LinearProgressWithLabel value={progress}/>
+                                            <LinearProgressWithLabel value={56}/>
                                         </Box></div>
                                     </div>
                                 </Container>

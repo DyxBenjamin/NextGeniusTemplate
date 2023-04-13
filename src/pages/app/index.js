@@ -8,6 +8,8 @@ import useGetAPI from "@hooks/useGetAPI";
 import CircularProgressComponent from "@components/circularProgressComponent";
 import ButtonsFamiliars from "@components/ButtonsFamiliars";
 import ArticlesSD from "@components/ArticlesSD";
+import Button from "@mui/material/Button";
+import Image from "next/image";
 
 export default function App() {
     const {data: cardsInfo, isLoading: cardIsLoading} = useGetAPI('/api/services/cards');
@@ -31,16 +33,17 @@ export default function App() {
             <Container
                 maxWidth="xl"
                 sx={{mt: 2, display: "flex", flexDirection: "column"}}>
-                <Stack direction="column" spacing={1} sx={{m: 1}}>
+                <Box sx={{ display: 'flex', alignItems:'center', flexDirection:'column', justifyContent:'center' }} >
                     <Typography variant="h4">
-                        Hola, user_name.
+                        Hola, Benjamin.
                     </Typography>
                     <Typography variant="subtitle1">
                         Es un gusto tenerte por aqui de vuelta.
                     </Typography>
-                </Stack>
-                <ButtonWithIcon/>
+                    <ButtonWithIcon/>
+                </Box>
                 <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
+
                     <Typography sx={{flex: 1}} variant="subtitle1">
                         Miembros de la familia
                     </Typography>
@@ -54,6 +57,10 @@ export default function App() {
                     {usersInfo && <ButtonsFamiliars users={usersInfo}/>}
                     <ButtonProfile/>
                 </Box>
+                <Button variant={'contained'} sx={{margin:'1rem 0', padding:'0.5rem 0'}}  >
+                    Agenda una consulta nutricional
+                </Button>
+
                 <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
                     <Typography sx={{flex: 1}} variant="subtitle1">
                         Recetas del Dia

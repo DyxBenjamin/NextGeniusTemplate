@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <AppBar position="static" sx={{backgroundColor: '#f2f5f3'}}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters sx={{ display:'flex', justifyContent:'space-between' }} >
                     <img src={"https://cdn.comunidadsd.org/MX/Salud-Digna/Home/Header/img/LogoSaludDigna.svg"}
                          style={{
                              maxHeight: "100px",
@@ -25,7 +25,7 @@ const Navbar = () => {
                             color: 'black',
                             textDecoration: 'none',
                         }}>
-                        - Nutrición
+                        Nutrición
                     </Typography>
                 </Toolbar>
             </Container>

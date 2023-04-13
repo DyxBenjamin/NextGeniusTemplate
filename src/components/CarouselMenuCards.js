@@ -51,9 +51,9 @@ const CarouselMenuCards = ({recipeName, title, calories, image, ingredients}) =>
                         marginLeft: "20%",
                         marginTop: "-1vh"
                     }} alt="Imagen de ejemplo"/>
-                    <Button size="small" style={{backgroundColor: "#FFFFFF"}}
+                    <Button size="small" style={{backgroundColor: "#FFFFFF", fontSize:'10px', marginLeft: "auto", marginTop: "-1vh"}}
                             onClick={handleOpen}>
-                        Ver receta
+                        Ver Platillos
                     </Button>
                     <CardActions style={{marginLeft: "auto", marginTop: "-5%"}}>
                         <Modal
