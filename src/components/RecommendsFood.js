@@ -1,7 +1,8 @@
-import {Box, Typography} from "@mui/material";
+import {Box, Checkbox, Typography} from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import WarningIcon from "@mui/icons-material/Warning";
 import ErrorIcon from "@mui/icons-material/Error";
+import React, {Fragment} from "react";
 
 const messages = [
     {text: "Hechale poco queso", icon: <CheckCircleIcon sx={{color: "green"}}/>},
@@ -28,7 +29,7 @@ const getRandomMessages = () => {
     return randomMessages.map((index) => messages[index]);
 };
 
-const RecommendsFood = ({formSend}) => {
+const RecommendsFood = ({check}) => {
     const randomMessages = getRandomMessages();
 
     return (
@@ -50,6 +51,7 @@ const RecommendsFood = ({formSend}) => {
                                     : "#FEEAE8",
                     }}
                 >
+                    {check && <Checkbox />}
                     {message.icon}
                     <Typography sx={{ml: 1}}>{message.text}</Typography>
                 </Box>

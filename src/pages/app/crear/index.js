@@ -8,6 +8,7 @@ import ButtonsFamiliarActivate from "@components/ButtonsFamiliarActivate";
 import RecommendsFood from "@components/RecommendsFood";
 import RecommendsByIUsers from "@components/RecommendsByUsers";
 import Router from "next/router";
+import ModalAgregarPlatillo from "@components/ModalAddPlatillo";
 
 export default function Index() {
     const [items, setItems] = useState([{}]);
@@ -19,6 +20,7 @@ export default function Index() {
     const {data: usersInfo, isLoading: usersIsLoading} = useGetAPI('/api/services/users');
     // const fillActiveButtons = !r_.isEmpty(usersInfo) ? Array(usersInfo.length).fill(true) : []
     const [activeButtons, setActiveButtons] = useState([true, true, true]);
+    const [openModal, setOpenModal] = useState(false);
 
     if (allIsLoading || usersIsLoading) {
         return (
@@ -64,6 +66,13 @@ export default function Index() {
     const resetForm = () => {
         setValidateFood(false)
     }
+    const handleOpenModal = () => {
+        setOpenModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    };
     return (
         <Fragment>
             <Box
@@ -75,9 +84,10 @@ export default function Index() {
                 <Container
                     maxWidth="xl"
                     sx={{mt: 1, display: "flex", flexDirection: "column"}}>
-                    <Button type="button" variant="contained">
+                    <Button type="button" variant="contained" onClick={handleOpenModal}>
                         Agrega tu platillo si no esta en la lista
                     </Button>
+                    <ModalAgregarPlatillo open={openModal} handleClose={handleCloseModal}/>
                 </Container>
             </Box>
             <Box
@@ -168,15 +178,8 @@ export default function Index() {
                         </Typography>
                     </Box>
                     {!r_.isEmpty(formSend) ? <Box sx={{mb: 1, display: 'flex', textAlign: 'left'}}>
-                        <RecommendsFood foodSend={formSend}/>
+                        <RecommendsFood check={true}/>
                     </Box> : <CircularProgressComponent/>}
-                    <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
-                        <Typography sx={{flex: 1}} variant="subtitle1">
-                            Recomendaciones por Usuario
-                        </Typography>
-                    </Box>
-                    {!r_.isEmpty(formSend) ?
-                        <RecommendsByIUsers users={usersInfo}/> : <CircularProgressComponent/>}
                     <Box sx={{mb: 1, display: 'flex', alignSelf: 'center'}}>
                         <Stack direction="row" spacing={2}>
                             <Button variant="contained" color="primary" onClick={() => Router.push(`/app/recetas`)}>
