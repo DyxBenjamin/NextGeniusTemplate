@@ -1,24 +1,21 @@
+import Nav from "@pages/dashboard/components/Nav";
+import React from "react";
 import {
 	Box,
 	MenuItem,
-	Select, Table, TableBody,
+	Select,
+	Table, TableBody,
 	TableCell,
 	TableContainer,
 	TableHead,
 	TableRow,
 	TextField,
 	Typography
-} from '@mui/material';
+} from "@mui/material";
 import ClientRow from "@pages/dashboard/components/ClientRow";
-
-export default function Clients() {
-
-
-
-
-
+export default function Pacientes({}) {
 	return (
-		<>
+		<Nav>
 			<Box sx={{ padding:'2rem' }} >
 				<Typography variant={'h5'} >
 					Pacientes
@@ -43,11 +40,18 @@ export default function Clients() {
 						boxShadow: '0px 0px 1px -1px rgb(0 0 0 / 0.20), 0px 1px 1px 0px rgb(0 0 0 / 0.14), 0px 1px 3px 0px rgb(0 0 0 / 0.12)',
 						border: '0.5px solid var(--gray-300)',
 						borderRadius: '8px',
-						width: '100%'}}>
-						<Table>
+						width: '100%'
+					}}>
+						<Table fullWidth >
 							<TableHead>
 								<TableRow>
-									<TableCell align="left">Paciente</TableCell>
+									<TableCell
+										align="left"
+										sx={{
+											width: '300px'
+										}}>
+										Paciente
+									</TableCell>
 									<TableCell
 										align="center"
 										sx={{
@@ -90,6 +94,6 @@ export default function Clients() {
 					</TableContainer>
 				</Box>
 			</Box>
-		</>
-	);
+		</Nav>
+	)
 }

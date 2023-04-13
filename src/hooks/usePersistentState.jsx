@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 const entities = {
 	// exampleEntity: entity(20, [persistence(`ClientPlansTableLimit`)]),
+	activeTab: entity('Citas', [persistence(`activeTab`)]),
 }
 
 export default function usePersistentState(key){

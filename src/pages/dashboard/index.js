@@ -1,11 +1,36 @@
 import Head from 'next/head'
-import {Box} from '@mui/material';
 import Nav from "@pages/dashboard/components/Nav";
-import Clients from "@pages/dashboard/Clients";
+import {useState} from "react";
+
+import { useRouter } from 'next/router'
+import {Box, Divider, Typography} from "@mui/material";
+import Link from "next/link";
 
 
+const NavigationEnum = {
+	Dashboard: {
+		route: 'dashboard',
+		component: 'Dashboard',
+	},
+	Plans: {
+		route: 'plans',
+		component: 'Plans',
+	},
+	Clients: {
+		route: 'clients',
+		component: 'Clients',
+	},
+	Articles: {
+		route: 'articles',
+		component: 'Articles',
+	}
+}
 
 export default function Dashboard() {
+	const [navigation, setNavigation] = useState(NavigationEnum.Dashboard);
+
+	const router = useRouter()
+
 	return (
 		<>
 			<Head>
@@ -14,12 +39,62 @@ export default function Dashboard() {
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
-			<main style={{ height:'100vh' }} >
-				<Box sx={{ width: '100%', height:'100%', display:'flex' }} >
-					<Nav/>
-					<Clients/>
+			<Nav>
+				<Box sx={{display: 'flex'}} >
+
+					<Link href={'/dashboard/pacientes'} style={{ color: 'darkgrey', textDecoration: 'none' }} >
+						<Box sx={{ display:'flex', flexDirection:'column', alignItems: 'center', justifyContent:'center', padding:'30px', border:'1px solid black', borderRadius:'8px' }} >
+							<Typography variant={'h5'} sx={{ marginBottom:'1rem' }} >
+								Planes
+							</Typography>
+							<Typography>
+								Crea planes de alimentación
+							</Typography>
+							<Typography>
+								Adapta los valores nutricionales de acuerdo
+							</Typography>
+							<Typography>
+								 a las necesidades de tus pacientes
+							</Typography>
+						</Box>
+					</Link>
+
+					<Link href={'/dashboard/pacientes'} style={{ color: 'darkgrey', textDecoration: 'none' }} >
+						<Box sx={{ display:'flex', flexDirection:'column', alignItems: 'center', justifyContent:'center', padding:'30px', border:'1px solid black', borderRadius:'8px' }} >
+							<Typography variant={'h5'} sx={{ marginBottom:'1rem' }} >
+								Pacientes
+							</Typography>
+							<Typography>
+								Monitorea el progreso de tus pacientes
+							</Typography>
+							<Typography>
+								Asignales planes y recetas
+							</Typography>
+							<Typography>
+								Comparte contenido de interes
+							</Typography>
+						</Box>
+					</Link>
+
+					<Link href={'/dashboard/pacientes'} style={{ color: 'darkgrey', textDecoration: 'none' }} >
+						<Box sx={{ display:'flex', flexDirection:'column', alignItems: 'center', justifyContent:'center', padding:'30px', border:'1px solid black', borderRadius:'8px' }} >
+							<Typography variant={'h5'} sx={{ marginBottom:'1rem' }} >
+								Recetas
+							</Typography>
+							<Typography>
+								Crea recetas para tus pacientes
+							</Typography>
+							<Typography>
+								Asignales planes y recetas
+							</Typography>
+							<Typography>
+								Comparte contenido de interes
+							</Typography>
+						</Box>
+					</Link>
+
 				</Box>
-			</main>
+			</Nav>
 		</>
 	)
 }
