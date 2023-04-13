@@ -2,7 +2,7 @@ const PlaceholderUsers = [
 	{
 		id: 1,
 		familyId: 1,
-		status: 'active',
+		status: 'deleted',
 		profile: {
 			name: 'Smitty Werben',
 			lastName: 'Man Jensen',

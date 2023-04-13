@@ -1,17 +1,27 @@
 import Nav from "@pages/dashboard/components/Nav";
 import React, {useState} from "react";
-import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography} from "@mui/material";
-import RecipeCard from "@pages/dashboard/recetas/components/RecipeCard";
+import {
+	Box,
+	Button, Chip,
+	FormControl,
+	InputLabel,
+	MenuItem,
+	OutlinedInput,
+	Select,
+	TextField,
+	Typography
+} from "@mui/material";
 import PlanCard from "@pages/dashboard/planes/components/PlanCard";
+import CreatePlanModal from "@pages/dashboard/planes/components/CreatePlanModal";
 export default function Planes({}) {
 	const [openCreatePlanModal, setOpenCreatePlanModal] = useState(false);
 	const [filters, setFilters] = useState({
 		search: '',
 		category: 'All',
-		calories: 'All',
+		tags: [],
 		time: 'All',
 	});
-	const switchCreateRecipeModal = () => {
+	const switchCreatePlanModal = () => {
 		setOpenCreatePlanModal(!openCreatePlanModal);
 	}
 
@@ -54,16 +64,24 @@ export default function Planes({}) {
 						</Select>
 					</FormControl>
 					<FormControl>
-						<InputLabel>Calorias</InputLabel>
+						<InputLabel>Tags</InputLabel>
 						<Select
 							sx={{ width:'200px' }}
-							value={filters.calories}
+							value={filters.tags}
+							multiple
 							label='calorias'
-							name='calories'
+							name='tags'
+							input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+							renderValue={(selected) => (
+								<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+									{selected.map((value) => (
+										<Chip key={value} label={value} size="small"  />
+									))}
+								</Box>
+							)}
 							onChange={handleFilters}>
-							<MenuItem value={'All'}>Todos</MenuItem>
-							<MenuItem value={'100'}> Menores a 100kcal </MenuItem>
-							<MenuItem value={'300'}> Menores de 300kcal </MenuItem>
+							<MenuItem value={'tag1'}> tag 1  </MenuItem>
+							<MenuItem value={'tag2'}> tag 2 </MenuItem>
 						</Select>
 					</FormControl>
 					<FormControl>
@@ -86,7 +104,7 @@ export default function Planes({}) {
 					gridGap: '1rem',
 					marginTop: '2rem'
 				}} >
-					<Button onClick={switchCreateRecipeModal} color={'primary'} sx={{ background:'#FAFAFA', padding:'1rem', borderRadius:'10px' }}>
+					<Button onClick={switchCreatePlanModal} color={'primary'} sx={{ background:'#FAFAFA', padding:'1rem', borderRadius:'10px' }}>
 						Agregar Plan
 					</Button>
 					<PlanCard/>
@@ -96,6 +114,7 @@ export default function Planes({}) {
 					<PlanCard/>
 				</Box>
 			</Box>
+			<CreatePlanModal open={openCreatePlanModal} handleClose={switchCreatePlanModal} data={'test'} />
 		</Nav>
 	)
 }

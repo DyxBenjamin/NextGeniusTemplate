@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Nav from "@pages/dashboard/components/Nav";
-import CreateRecipeModal from "@pages/dashboard/components/CreateRecipeModal";
+import CreateRecipeModal from "@pages/dashboard/recetas/components/CreateRecipeModal";
 import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography} from "@mui/material";
 import RecipeCard from "@pages/dashboard/recetas/components/RecipeCard";
 

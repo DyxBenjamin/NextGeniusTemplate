@@ -1,12 +1,15 @@
 import React from "react";
-import {Box, Typography} from "@mui/material";
+import {Box, Chip, Typography} from "@mui/material";
+
+import _ from 'lodash';
+import * as PropTypes from "prop-types";
 
 export default function PlanCard() {
 
 	const {name, category, favorite, tags} = {
 		name: 'Plan 1',
 		category: 'Categoría 1',
-		tags:'tag1, tag2, tag3',
+		tags:['tag1', 'tag2', 'tag3'],
 		favorite: true,
 	}
 
@@ -25,11 +28,18 @@ export default function PlanCard() {
 				transform: 'scale(0.96)',
 				transition: 'all 0.2s ease-in-out'
 			}}}>
-			<Box sx={{display:'flex', flexDirection:'column', gap:'1rem'}} >
-				<Box>
-					<Typography>
-						{tags}
-					</Typography>
+			<Box sx={{display:'flex', flexDirection:'column', gap:'1rem', padding:'1rem'}} >
+				<Box sx={{ display:'flex', gap:'1rem' }} >
+					<Box sx={{ width:'24px', height:'24px', background:'black', borderRadius:'4px' }} >
+
+					</Box>
+					{
+						_.map(tags, (tag, index) => {
+							return (
+								<Chip label={tag} size={'small'} />
+							)
+						})
+					}
 				</Box>
 				<Typography variant={'h5'} >
 					{name}
@@ -37,6 +47,7 @@ export default function PlanCard() {
 				<Typography>
 					{category}
 				</Typography>
+
 			</Box>
 
 		</Box>
