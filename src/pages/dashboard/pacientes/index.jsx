@@ -16,7 +16,7 @@ import ClientRow from "@pages/dashboard/components/ClientRow";
 export default function Pacientes({}) {
 	return (
 		<Nav>
-			<Box sx={{ padding:'2rem' }} >
+			<Box sx={{ padding:'2rem', width:'100%' }} >
 				<Typography variant={'h5'} >
 					Pacientes
 				</Typography>
@@ -76,7 +76,7 @@ export default function Pacientes({}) {
 								</TableRow>
 							</TableHead>
 							<TableBody>
-								<ClientRow client={{name: 'benjamin', status:'Active'}}  />
+								<ClientRow client={{name: 'benjamin', status:'Active', id:42}}  />
 								<ClientRow />
 								<TableRow>
 									<TableCell align="left"> Maria Antonieta </TableCell>

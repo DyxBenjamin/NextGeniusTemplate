@@ -10,7 +10,7 @@ export default function Publicaciones() {
 					Publicaciones
 				</Typography>
 				<Typography>
-					Crea y administra tus publicaciones para tus pacientes
+					Crea y administra tus publicaciones para compartir con tus pacientes
 				</Typography>
 			</Box>
 		</Nav>
