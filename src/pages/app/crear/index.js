@@ -178,15 +178,8 @@ export default function Index() {
                         </Typography>
                     </Box>
                     {!r_.isEmpty(formSend) ? <Box sx={{mb: 1, display: 'flex', textAlign: 'left'}}>
-                        <RecommendsFood foodSend={formSend}/>
+                        <RecommendsFood check={true}/>
                     </Box> : <CircularProgressComponent/>}
-                    <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
-                        <Typography sx={{flex: 1}} variant="subtitle1">
-                            Recomendaciones por Usuario
-                        </Typography>
-                    </Box>
-                    {!r_.isEmpty(formSend) ?
-                        <RecommendsByIUsers users={usersInfo}/> : <CircularProgressComponent/>}
                     <Box sx={{mb: 1, display: 'flex', alignSelf: 'center'}}>
                         <Stack direction="row" spacing={2}>
                             <Button variant="contained" color="primary" onClick={() => Router.push(`/app/recetas`)}>
