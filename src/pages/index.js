@@ -2,10 +2,6 @@ import Head from 'next/head'
 import {Typography} from '@mui/material';
 
 export default function Home() {
-
-
-
-
 	return (
 		<>
 			<Head>
@@ -18,7 +14,6 @@ export default function Home() {
 				<Typography variant={'h2'}>
 					New App
 				</Typography>
-
 			</main>
 		</>
 	);

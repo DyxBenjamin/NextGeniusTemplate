@@ -1,5 +1,9 @@
 import Head from 'next/head'
-import {Typography} from '@mui/material';
+import {Box} from '@mui/material';
+import Nav from "@pages/dashboard/components/Nav";
+import Clients from "@pages/dashboard/Clients";
+
+
 
 export default function Dashboard() {
 	return (
@@ -10,10 +14,11 @@ export default function Dashboard() {
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
-			<main>
-				<Typography variant={'h2'}>
-					Dashboard Side
-				</Typography>
+			<main style={{ height:'100vh' }} >
+				<Box sx={{ width: '100%', height:'100%', display:'flex' }} >
+					<Nav/>
+					<Clients/>
+				</Box>
 			</main>
 		</>
 	)
