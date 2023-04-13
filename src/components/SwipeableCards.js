@@ -8,7 +8,7 @@ const SwipeableCards = ({ img, title }) => {
                 image={img}
                 alt={title}
             />
-            <Typography variant="h5">{title}</Typography>
+            <Typography variant="subtitle2">{title}</Typography>
         </Card>
     );
 };

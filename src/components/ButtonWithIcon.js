@@ -11,10 +11,10 @@ const ButtonWithIcon = () => {
                 width: '80vw',
                 height: 120,
                 borderRadius: 5,
-                bgcolor: 'gray',
+                bgcolor: '#868589',
                 color: 'white',
                 '&:hover': {
-                    bgcolor: 'darkGray',
+                    bgcolor: '#444343',
                 },
             }}
             startIcon={<LocalDiningIcon
