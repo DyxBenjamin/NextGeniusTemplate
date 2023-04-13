@@ -22,11 +22,11 @@ const Footer = () => {
                 <BottomNavigationAction label="Home" icon={<HomeIcon/>}
                                         onClick={() => Router.push(`/app`)}/>
                 <BottomNavigationAction label="Recipes" icon={<MenuBook/>}
-                                        onClick={() => Router.push(`/app/recipes`)}/>
+                                        onClick={() => Router.push(`/app/recetas`)}/>
                 <BottomNavigationAction label="Profile" icon={<AccountCircle/>}
-                                        onClick={() => Router.push(`/app/profile`)}/>
+                                        onClick={() => Router.push(`/app/perfil`)}/>
                 <BottomNavigationAction label="Articles" icon={<Newspaper/>}
-                                        onClick={() => Router.push(`/app/articles`)}/>
+                                        onClick={() => Router.push(`/app/articulos`)}/>
             </BottomNavigation>
         </Paper>
     )

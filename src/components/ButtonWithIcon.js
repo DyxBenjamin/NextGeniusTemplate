@@ -18,7 +18,7 @@ const ButtonWithIcon = () => {
                     bgcolor: '#444343',
                 },
             }}
-            onClick={() => Router.push(`/app/recipes`)}
+            onClick={() => Router.push(`/app/recetas`)}
             startIcon={<LocalDiningIcon
                 sx={{
                     width: '75px',
