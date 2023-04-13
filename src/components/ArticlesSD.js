@@ -14,7 +14,7 @@ export default function ArticlesSD({articles}) {
         const allArts = []
         _.each(articles, (valueArt, index) => {
             const articlesInd = (
-                <Card sx={{maxWidth: 345, mb: 2}}>
+                <Card key={`artSD_${index}`} sx={{maxWidth: 345, mb: 2}}>
                     <CardMedia
                         component="img"
                         alt="green iguana"
@@ -26,7 +26,7 @@ export default function ArticlesSD({articles}) {
                             {valueArt.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            <p>{valueArt.description.slice(0, 150)}...</p>
+                            {valueArt.description.slice(0, 150)}...
                         </Typography>
                     </CardContent>
                     <CardActions>
