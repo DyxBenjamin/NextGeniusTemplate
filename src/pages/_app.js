@@ -20,6 +20,7 @@ export default function App({Component, pageProps, router}) {
 		return (
 			<Layout>
 				<ThemeProvider theme={theme}>
+					<title>Nutricion SD</title>
 					<Component {...pageProps} />
 				</ThemeProvider>
 			</Layout>
