@@ -21,7 +21,7 @@ export default function Recetas() {
 				</Typography>
 			</Box>
 
-			<Button onClick={switchCreateRecipeModal} >
+			<Button onClick={switchCreateRecipeModal} color={'primary'} >
 				Crear receta
 			</Button>
 			<CreateRecipeModal open={openCreateRecipeModal} handleClose={switchCreateRecipeModal} data={'test'} />
