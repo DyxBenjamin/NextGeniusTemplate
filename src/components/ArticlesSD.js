@@ -6,8 +6,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import _ from "lodash";
-import {Stack} from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import {Fragment} from "react";
 
 export default function ArticlesSD({articles}) {
