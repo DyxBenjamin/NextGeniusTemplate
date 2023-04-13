@@ -13,8 +13,7 @@ export default function Home() {
 			<main>
 				<Typography variant={'h2'}>
 					<iframe width="300" height="154" src="https://w2.countingdownto.com/4686684"
-							frameBorder="0">
-					</iframe>
+							frameBorder="0"></iframe>
 				</Typography>
 			</main>
 		</>
