@@ -179,7 +179,7 @@ export default function Index() {
                         <RecommendsByIUsers users={usersInfo}/> : <CircularProgressComponent/>}
                     <Box sx={{mb: 1, display: 'flex', alignSelf: 'center'}}>
                         <Stack direction="row" spacing={2}>
-                            <Button variant="contained" color="primary" onClick={() => Router.push(`/app/recipes`)}>
+                            <Button variant="contained" color="primary" onClick={() => Router.push(`/app/recetas`)}>
                                 Guardar
                             </Button>
                             <Button variant="outlined" color="primary" onClick={resetForm}>
