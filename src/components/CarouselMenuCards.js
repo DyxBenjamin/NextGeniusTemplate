@@ -51,11 +51,11 @@ const CarouselMenuCards = ({recipeName, title, calories, image, ingredients}) =>
                         marginLeft: "20%",
                         marginTop: "-1vh"
                     }} alt="Imagen de ejemplo"/>
+                    <Button size="small" style={{backgroundColor: "#FFFFFF"}}
+                            onClick={handleOpen}>
+                        Ver receta
+                    </Button>
                     <CardActions style={{marginLeft: "auto", marginTop: "-5%"}}>
-                        <Button size="small" style={{backgroundColor: "#FFFFFF"}}
-                                onClick={handleOpen}>
-                            Ver receta
-                        </Button>
                         <Modal
                             open={open}
                             onClose={handleClose}
