@@ -18,12 +18,11 @@ const styles = {
 
 export default function CreateRecipeModal({open, handleClose, data}) {
 	return (<>
-			{ data &&
+			{data &&
 				<Modal
 					open={open}
-					onClose={handleClose}  >
-					<Box 					sx={styles.modal}
-					>
+					onClose={handleClose}>
+					<Box sx={styles.modal}>
 						<Typography variant={'h6'}>
 							Crear receta
 						</Typography>

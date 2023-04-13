@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Nav from "@pages/dashboard/components/Nav";
 import CreateRecipeModal from "@pages/dashboard/components/CreateRecipeModal";
-import {Button} from "@mui/material";
+import {Box, Button, Typography} from "@mui/material";
 
 export default function Recetas() {
 	const [openCreateRecipeModal, setOpenCreateRecipeModal] = useState(false);
@@ -12,7 +12,14 @@ export default function Recetas() {
 
 	return (
 		<Nav>
-			<h1>Recetas</h1>
+			<Box sx={{ padding:'2rem' }} >
+				<Typography variant={'h5'} >
+					Pacientes
+				</Typography>
+				<Typography>
+					En esta sección podrás ver todos los pacientes que tienes asignados a tu cuenta.
+				</Typography>
+			</Box>
 
 			<Button onClick={switchCreateRecipeModal} >
 				Crear receta
