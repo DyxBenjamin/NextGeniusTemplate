@@ -5,12 +5,16 @@ import * as r_ from "radash";
 import useGetAPI from "@hooks/useGetAPI";
 import CircularProgressComponent from "@components/circularProgressComponent";
 import ButtonsFamiliarActivate from "@components/ButtonsFamiliarActivate";
+import RecommendsFood from "@components/RecommendsFood";
+import RecommendsByIUsers from "@components/RecommendsByUsers";
+import Router from "next/router";
 
 export default function Index() {
     const [items, setItems] = useState([{}]);
+    const [formSend, setFormSend] = useState(null);
     const [calorias, setCalorias] = useState(0);
     const [saveCal, setSaveCal] = useState(0);
-    const [platilloSeleccionado, setPlatilloSeleccionado] = useState(null);
+    const [validateFood, setValidateFood] = useState(false);
     const {data: allRecipes, isLoading: allIsLoading} = useGetAPI('/api/services/platillos');
     const {data: usersInfo, isLoading: usersIsLoading} = useGetAPI('/api/services/users');
     // const fillActiveButtons = !r_.isEmpty(usersInfo) ? Array(usersInfo.length).fill(true) : []
@@ -26,7 +30,6 @@ export default function Index() {
             const newItems = [...items];
             newItems[index] = value;
             setItems(newItems);
-            setPlatilloSeleccionado(value);
             setCalorias(calorias + value.calories);
             setSaveCal(value.calories)
         } else if (saveCal) {
@@ -50,15 +53,33 @@ export default function Index() {
         if (!r_.isEmpty(items)) Object.assign(finalModel, {platillos: items})
         if (!r_.isEmpty(activeButtons)) Object.assign(finalModel, {personas: activeButtons.length})
         if (!r_.isEmpty(calorias)) Object.assign(finalModel, {totalCal: calorias})
-        console.log(finalModel)
+        if (!r_.isEmpty(finalModel)) setFormSend(finalModel)
+        setValidateFood(true)
     };
     const handleButtonClick = (index) => {
         const newActiveButtons = [...activeButtons];
         newActiveButtons[index] = !newActiveButtons[index];
         setActiveButtons(newActiveButtons);
     };
+    const resetForm = () => {
+        setValidateFood(false)
+    }
     return (
         <Fragment>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexGrow: 1,
+                    alignItems: "stretch",
+                }}>
+                <Container
+                    maxWidth="xl"
+                    sx={{mt: 1, display: "flex", flexDirection: "column"}}>
+                    <Button type="button" variant="contained">
+                        Agrega tu platillo si no esta en la lista
+                    </Button>
+                </Container>
+            </Box>
             <Box
                 sx={{
                     mt: 2,
@@ -132,7 +153,7 @@ export default function Index() {
                     </form>
                 </Container>
             </Box>
-            <Box
+            {validateFood && <Box
                 sx={{
                     display: "flex",
                     flexGrow: 1,
@@ -140,24 +161,34 @@ export default function Index() {
                 }}>
                 <Container
                     maxWidth="xl"
-                    sx={{mt: 1, display: "flex", flexDirection: "column"}}>
-                    <Button type="button" variant="contained">
-                        Agrega tu platillo si no esta en la lista
-                    </Button>
+                    sx={{mt: 1, mb: 7, display: "flex", flexDirection: "column"}}>
+                    <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
+                        <Typography sx={{flex: 1}} variant="subtitle1">
+                            Recomendaciones Generales
+                        </Typography>
+                    </Box>
+                    {!r_.isEmpty(formSend) ? <Box sx={{mb: 1, display: 'flex', textAlign: 'left'}}>
+                        <RecommendsFood foodSend={formSend}/>
+                    </Box> : <CircularProgressComponent/>}
+                    <Box sx={{mb: 1, display: 'flex', textAlign: 'center'}}>
+                        <Typography sx={{flex: 1}} variant="subtitle1">
+                            Recomendaciones por Usuario
+                        </Typography>
+                    </Box>
+                    {!r_.isEmpty(formSend) ?
+                        <RecommendsByIUsers users={usersInfo}/> : <CircularProgressComponent/>}
+                    <Box sx={{mb: 1, display: 'flex', alignSelf: 'center'}}>
+                        <Stack direction="row" spacing={2}>
+                            <Button variant="contained" color="primary" onClick={() => Router.push(`/app/recipes`)}>
+                                Guardar
+                            </Button>
+                            <Button variant="outlined" color="primary" onClick={resetForm}>
+                                Cancelar
+                            </Button>
+                        </Stack>
+                    </Box>
                 </Container>
-            </Box>
-            <Box
-                sx={{
-                    display: "flex",
-                    flexGrow: 1,
-                    alignItems: "stretch",
-                }}>
-                <Container
-                    maxWidth="xl"
-                    sx={{mt: 1, display: "flex", flexDirection: "column"}}>
-                    TEST: {calorias}
-                </Container>
-            </Box>
+            </Box>}
         </Fragment>
     )
 }
