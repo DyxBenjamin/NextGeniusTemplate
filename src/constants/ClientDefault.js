@@ -2,7 +2,7 @@ const ClientDefault = {
 	name: 'salud digna',
 	pendingPlans: 0,
 	lastPlan: 'Hoy',
-	feedback: '',
+	feedback: 'No hay comentarios',
 	status: 'inactive',
 }
 

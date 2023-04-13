@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Nav from "@pages/dashboard/components/Nav";
 import CreateRecipeModal from "@pages/dashboard/components/CreateRecipeModal";
 import {Box, Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography} from "@mui/material";
-import RecipeCard from "@pages/dashboard/components/RecipeCard";
+import RecipeCard from "@pages/dashboard/recetas/components/RecipeCard";
 
 export default function Recetas() {
 	const [openCreateRecipeModal, setOpenCreateRecipeModal] = useState(false);

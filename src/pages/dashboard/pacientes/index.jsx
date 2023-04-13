@@ -13,6 +13,8 @@ import {
 	Typography
 } from "@mui/material";
 import ClientRow from "@pages/dashboard/components/ClientRow";
+import PlaceholderUsers from "@data/PlaceholderUsers";
+import _ from "lodash";
 export default function Pacientes({}) {
 	return (
 		<Nav>
@@ -76,19 +78,13 @@ export default function Pacientes({}) {
 								</TableRow>
 							</TableHead>
 							<TableBody>
-								<ClientRow client={{name: 'benjamin', status:'Active', id:42}}  />
-								<ClientRow />
-								<TableRow>
-									<TableCell align="left"> Maria Antonieta </TableCell>
-									<TableCell align="center"> 3 </TableCell>
-									<TableCell align="left"> Deficit - Calorico (Maria) </TableCell>
-									<TableCell align="left"> 3 no leidos </TableCell>
-									<TableCell align="center">Activo</TableCell>
-									<TableCell align="left">
-										<Typography>View</Typography>
-										<Typography>Profile</Typography>
-									</TableCell>
-								</TableRow>
+								{
+									_.map( PlaceholderUsers, (user, index) => {
+										return (
+											<ClientRow key={index} client={user} />
+										)
+									})
+								}
 							</TableBody>
 						</Table>
 					</TableContainer>

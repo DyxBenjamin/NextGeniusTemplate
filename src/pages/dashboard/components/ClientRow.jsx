@@ -6,7 +6,11 @@ import {useRouter} from "next/router";
 
 
 export default function ClientRow({client}) {
-	const {name, pendingPlans, lastPlan, feedback, status} = {...ClientDefault, ...client};
+	const {profile, status, plans} = {...ClientDefault, ...client};
+	const {name, lastName} = profile;
+	const {lastPlan, pendingPlans, feedback} = plans;
+
+
 	const router = useRouter();
 
 	const handleClick = async () => {
@@ -16,10 +20,10 @@ export default function ClientRow({client}) {
 
 	return (
 		<TableRow >
-			<TableCell onClick={handleClick} align="left">{name}</TableCell>
-			<TableCell onClick={handleClick} align="center">{pendingPlans}</TableCell>
-			<TableCell onClick={handleClick} align="left">{lastPlan}</TableCell>
-			<TableCell onClick={handleClick} align="left"> {feedback}</TableCell>
+			<TableCell onClick={handleClick} sx={{ cursor:'pointer' }} align="left">{`${name} ${lastName} `}</TableCell>
+			<TableCell onClick={handleClick} sx={{ cursor:'pointer' }} align="center">{pendingPlans}</TableCell>
+			<TableCell onClick={handleClick} sx={{ cursor:'pointer' }} align="left">{lastPlan}</TableCell>
+			<TableCell onClick={handleClick} sx={{ cursor:'pointer' }} align="left"> {feedback}</TableCell>
 			<TableCell align="center">{status}</TableCell>
 			<TableCell align="left">
 				<Typography>View</Typography>

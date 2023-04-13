@@ -45,7 +45,7 @@ export default function Nav({children}) {
 	const router = useRouter();
 
 	function isActiveRoute(route) {
-		return route === router.pathname;
+		return router.pathname.includes(route);
 	}
 
 	return (
