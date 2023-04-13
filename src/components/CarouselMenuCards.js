@@ -5,21 +5,23 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import React from "react";
 import _ from "lodash"
-const CarouselMenuCards = ({ recipeName, title, calories }) => {
+import Router from "next/router";
+const CarouselMenuCards = ({ recipeName, title, calories, image }) => {
     return (
         <Card style={{marginBottom:"10px"}}>
             <CardContent>
                 <div style={{display: "flex"}}>
-                    <div>
                         {title}
-                    </div>
+                        <img src={image} style={{maxHeight:"30px", maxWidth:"50px", marginRight:"20%", marginLeft:"20%", marginTop:"-1vh"}} alt="Imagen de ejemplo" />
                     <CardActions style={{ marginLeft: "auto", marginTop: "-5%" }}>
-                        <Button size="small" style={{ backgroundColor: "#FFFFFF" }}>Ver receta</Button>
+                        <Button size="small" style={{ backgroundColor: "#FFFFFF" }}
+                                >Ver receta</Button>
                     </CardActions>
                 </div>
-                <p>{calories}</p>
+                {calories && <p>{calories} kcal Totales</p>}
                 <p>{recipeName}</p>
-                {!calories && <Fab color="primary" aria-label="add" sx={{margin: "auto", marginLeft:"40%", marginRight:"40%"}}>
+                {!calories && <Fab color="primary" aria-label="add" sx={{margin: "auto", marginLeft:"40%", marginRight:"40%"}}
+                onClick={() => Router.push(`/app/crear`)}>
                     <AddIcon/>
                 </Fab>}
             </CardContent>

@@ -14,7 +14,7 @@ const CarouselMenu = ({cards}) => {
     return (
         <AutoPlaySwipeableViews interval={3000} onChangeIndex={handleChangeIndex}>
             {cards.map((_, i) => (
-                <CarouselMenuCards key={i} index={i} recipeName={_.recipeName} title={_.name} calories={_.calories} />
+                <CarouselMenuCards key={i} index={i} recipeName={_.recipeName} title={_.name} calories={_.calories} image={_.image} />
             ))}
         </AutoPlaySwipeableViews>
     );

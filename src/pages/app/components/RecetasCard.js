@@ -15,7 +15,7 @@ export default function RecetasCard({time}) {
                             <div>
                                 {time}
                             </div>
-                            <CardActions style={{ marginLeft: "auto", marginTop: "-5%" }}>
+                            <CardActions style={{ marginLeft: "20vw", marginTop: "-5%" }}>
                                 <Button size="small" style={{ backgroundColor: "#FFFFFF" }}>Ver receta</Button>
                             </CardActions>
                         </div>
